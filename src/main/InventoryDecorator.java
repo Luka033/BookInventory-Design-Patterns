@@ -15,7 +15,7 @@ public class InventoryDecorator implements Inventory {
     private static final String MEMENTO_FILE = "memento.ser";
     private static final String COMMAND_FILE = "command.ser";
     private final FileUtils fileUtils = new FileUtils();
-    private BookInventory inventory;
+    private final BookInventory inventory;
     private int commandCounter = 0;
 
     public InventoryDecorator(BookInventory inventory) {
@@ -54,14 +54,20 @@ public class InventoryDecorator implements Inventory {
         return executeOperation(new ChangePriceCommand(bookId, newPrice));
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Book find(int bookId) {
-        return null;
+        return this.inventory.find(bookId);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Book find(String bookName) {
-        return null;
+        return this.inventory.find(bookName);
     }
 
     /**

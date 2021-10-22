@@ -21,6 +21,5 @@ class AppendingObjectOutputStream extends ObjectOutputStream {
     @Override
     protected void writeStreamHeader() throws IOException {
         reset();
-
     }
 }

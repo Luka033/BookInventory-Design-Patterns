@@ -79,10 +79,7 @@ public class BookInventory implements Inventory, Serializable {
     }
 
     /**
-     * Searches for a book in the current inventory by name
-     *
-     * @param bookName name of the book to find
-     * @return Book if it was found null otherwise
+     * {@inheritDoc}
      */
     public Book find(String bookName) {
         return bookInventory.stream()
@@ -92,10 +89,7 @@ public class BookInventory implements Inventory, Serializable {
     }
 
     /**
-     * Searches for a book in the current inventory by id
-     *
-     * @param bookId name of the book to find
-     * @return Book if it was found null otherwise
+     * {@inheritDoc}
      */
     public Book find(int bookId) {
         return bookInventory.stream()

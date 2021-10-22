@@ -8,14 +8,14 @@ package main;
  */
 public class Main {
     public static void main(String[] args) {
-        BookInventory inventory = new BookInventory();
-        Inventory inventoryDecorator = new InventoryDecorator(inventory);
+//        BookInventory inventory = new BookInventory();
+//        Inventory inventoryDecorator = new InventoryDecorator(inventory);
 
 //        inventoryDecorator.restoreState();
 //        System.out.println(inventory);
-
-        inventoryDecorator.add(new Book("Book1", 29.99));
-        System.out.println(inventory);
+//
+//        inventoryDecorator.add(new Book("Book1", 29.99));
+//        System.out.println(inventory);
 //
 //        inventoryDecorator.addCopy(1);
 //        System.out.println(inventory);

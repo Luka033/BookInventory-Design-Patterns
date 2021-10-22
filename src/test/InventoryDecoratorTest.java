@@ -82,6 +82,28 @@ class InventoryDecoratorTest {
         assertEquals(inventory.find(book1.getId()).getPrice(), newPrice);
     }
 
+    @Test
+    void testFindById() {
+        Book nonExistingBook = inventoryDecorator.find(0);
+        assertNull(nonExistingBook);
+        inventoryDecorator.add(new Book("Book1", 29.99));
+        Book expectedBook = inventoryDecorator.find(1);
+        Book actualBook = new Book("Book1", 29.99);
+        actualBook.setId(1);
+        assertEquals(expectedBook, actualBook);
+    }
+
+    @Test
+    void testFindByName() {
+        Book nonExistingBook = inventoryDecorator.find("Book15");
+        assertNull(nonExistingBook);
+        inventoryDecorator.add(new Book("Book1", 29.99));
+        Book expectedBook = inventoryDecorator.find("Book1");
+        Book actualBook = new Book("Book1", 29.99);
+        actualBook.setId(1);
+        assertEquals(expectedBook, actualBook);
+    }
+
 
     private static void clearFiles() {
         if(new File(COMMAND_FILE).exists()) {
